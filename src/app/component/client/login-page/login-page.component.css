@@ -241,3 +241,7 @@ footer a {
     color: #3c97bf;
     text-decoration: none;
 }
+
+ghost {
+ border: 2px solid black;
+}

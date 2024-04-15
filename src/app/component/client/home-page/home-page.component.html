@@ -1,25 +1,272 @@
+<!-- /templates/layout.php -->
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>Home</title>
-  <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
-</head>
-<body>
-    <nav class="#">
-        <div class="container">
-            <li>Home</li>
-            <li>About</li>
-        </div>
-    </nav>
-    <div class="container">
-        <p>Xin chao</p>
-    </div>
-    <footer>Copy right: </footer>
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
-</body>
+    <title>Home</title>
+
+    <!-- Favicons -->
+    <!-- <link href="assets/img/favicon.png" rel="icon">
+	<link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon"> -->
+
+    <link href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
+  </head>
+
+  <body>
+    <!-- ======= Header ======= -->
+    <header id="header" class="header fixed-top d-flex align-items-center">
+      <div class="d-flex align-items-center justify-content-between">
+        <a href="#" class="logo d-flex align-items-center">
+          <img src="#" alt="" />
+          <span class="d-none d-lg-block">Blog</span>
+        </a>
+        <i class="bi bi-list toggle-sidebar-btn"></i>
+      </div>
+      <!-- End Logo -->
+
+      <nav class="header-nav ms-auto">
+        <ul class="d-flex align-items-center">
+          <li class="nav-item d-block d-lg-none">
+            <a class="nav-link nav-icon search-bar-toggle" href="#">
+              <i class="bi bi-search"></i>
+            </a>
+          </li>
+          <!-- End Search Icon-->
+
+          <a
+            class="nav-link nav-profile d-flex align-items-center pe-0"
+            href="#"
+            data-bs-toggle="dropdown"
+          >
+            <img src="#" alt="Profile" class="rounded-circle" />
+            <span class="d-none d-md-block dropdown-toggle ps-2"
+              >Nam Nguyễn</span
+            >
+          </a>
+          <!-- End Profile Iamge Icon -->
+
+          <ul
+            class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile"
+          >
+            <li class="dropdown-header">
+              <h6>Nam Nguyễn</h6>
+              <span>Web Designer</span>
+            </li>
+            <li>
+              <hr class="dropdown-divider" />
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="">
+                <i class="bi bi-person"></i>
+                <span>My Profile</span>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider" />
+            </li>
+          </ul>
+          <!-- End Profile Dropdown Items -->
+          <!-- End Profile Nav -->
+        </ul>
+      </nav>
+      <!-- End Icons Navigation -->
+    </header>
+    <!-- End Header -->
+
+    <!-- ======= Sidebar (Thanh bÃªn cáº¡nh) ======= -->
+    <aside id="sidebar" class="sidebar">
+      <ul class="sidebar-nav" id="sidebar-nav">
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="#">
+            <i class="bi bi-circle"></i>
+            <span>Quản lý tài khoản</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="#">
+            <i class="bi bi-circle"></i>
+            <span>Quản lý loại</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="/sanpham/sanphamlist">
+            <i class="bi bi-circle"></i>
+            <span>Quản lý bài viết</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="/hoadon/hoadonchuaxacnhanList">
+            <i class="bi bi-circle"></i>
+            <span>X</span>
+          </a>
+        </li>
+      </ul>
+    </aside>
+
+    <main id="main" class="main" style="min-height: 625px">
+      <section class="section">
+        <div class="row">
+          < class="col-lg-12">
+            <div class="card" style="padding: 50px">
+              <p>-------data-binding------</p>
+              <div>
+                <p>{{ user.name }}</p>
+                <p>{{ user.age }}</p>
+                <input type="text" [value]="user.name" />
+                <button type="button" (click)="handler()">Click me</button>
+                <br />
+                <p>---event-binding----</p>
+                {{ name }} <br />
+                <input type="text" [(ngModel)]="name" />
+              </div>
+            </div>
+            <div class="card" style="padding: 50px">
+              <p>-------ngIf-Structural------</p>
+              <div>
+                <hello *ngIf="user.age >= 18" [name]="user.name"></hello>
+
+                <div *ngIf="user.age < 18">
+                  you are too young to see this content
+                </div>
+
+                <button (click)="user.age = user.age - 1">-</button>
+                Age: {{ user.age }}
+                <button (click)="user.age = user.age + 1">+</button>
+                <br />
+                <br />
+                <p>---hiden----</p>
+                <hello [hidden]="user.age >= 18" [name]="user.name"></hello>
+                <ng-template #under18>
+                  <div *ngIf="user.age < 18">
+                    you are too young to see this content
+                  </div>
+                </ng-template>
+                <button (click)="user.age = user.age - 1">-</button>
+                Age: {{ user.age }}
+                <button (click)="user.age = user.age + 1">+</button>
+                <br />
+              </div>
+            </div>
+
+            <div class="card" style="padding: 50px">
+              <p>-------NgFor------</p>
+              <ul>
+                <li
+                  *ngFor="
+                    let u of users;
+                    index as idx;
+                    count as total;
+                    first as isFirst;
+                    even as isEven;
+                    odd as isOdd
+                  "
+                >
+                  <span> {{ u.name }} - {{ u.id }} - {{ u.phone }}</span>
+                  <br />
+                  <span>at index {{ idx }} out of {{ total }} </span>
+                  <br />
+                  <span *ngIf="isEven">I am even number</span>
+                </li>
+              </ul>
+              <button *ngFor="let tag of tags; last as isLast">
+                {{ tag }}
+              </button>
+            </div>
+            <div class="card" style="padding: 50px">
+              <p>-------Class Binding------</p>
+              <button (click)="isDanger = !isDanger">Toggle Danger</button>
+              <button (click)="isWarning = !isWarning">Toggle Warning</button>
+
+              <div [class]="classes"></div>
+            </div>
+
+            <br />
+            <div class="card" style="padding: 50px">
+              <p>-------input ------</p>
+              <progress-bar></progress-bar>
+              <br />
+              <button (click)="currentProgress = currentProgress + 1">
+                Increase Progress
+              </button>
+              <br />
+              <progress-bar
+                [progress]="currentProgress"
+                [progressColor]="'dodgerblue'"
+              ></progress-bar>
+            </div>
+            <br>
+            <div class="card" style="padding: 50px">
+              <p>-------out ------</p>
+              <app-author-list></app-author-list>
+             
+            </div>
+            <br>
+            <div class="card" style="padding: 50px">
+              <p>-------Two way ------</p>
+             <app-toggle></app-toggle> 
+             ViewChild/ViewChildren
+            </div>
+            <br>
+            <div class="card" style="padding: 50px">
+              <p>-------ViewChild/ViewChildren ------</p>
+              <button (click)="showLast = !showLast">Toggle show last</button>
+
+              <app-toggle [(checked)]="isChecked"></app-toggle>
+              <app-toggle [(checked)]="isChecked"></app-toggle>
+              <app-toggle [(checked)]="isChecked"></app-toggle>
+
+              <ng-container *ngIf="showLast" >
+                <app-toggle [(checked)]="isChecked"></app-toggle>
+              </ng-container>
+             
+            </div>
+          
+          </div>
+        
+      </section>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="copyright">
+        &copy; Copyright <strong><span>NamNguyen</span></strong
+        >. All Rights Reserved
+      </div>
+    </footer>
+    <!-- End Footer -->
+
+    <!-- NÃºt lÃªn Äáº§u trang -->
+    <a
+      href="#"
+      class="back-to-top d-flex align-items-center justify-content-center"
+      ><i class="bi bi-arrow-up-short"></i
+    ></a>
+
+    <!-- <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script> -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../src/js/main.js"></script>
+  </body>
 </html>
