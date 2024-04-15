@@ -11,6 +11,7 @@ import { ProgressBarComponent } from './component/client/home-page/progress-bar.
 import { AuthorDetailsComponent } from './author-details/author-details.component';
 import { AuthorListComponent } from './author-details/author-list.component';
 import { ToggleComponent } from './toggle/toggle.component';
+import { TabComponent } from './tab.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { ToggleComponent } from './toggle/toggle.component';
     AuthorListComponent,
     AuthorDetailsComponent,
     ToggleComponent,
+    TabComponent,
     HelloComponent
   ],
   imports: [

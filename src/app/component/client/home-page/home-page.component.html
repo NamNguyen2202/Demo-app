@@ -224,11 +224,10 @@
             <div class="card" style="padding: 50px">
               <p>-------Two way ------</p>
              <app-toggle></app-toggle> 
-             ViewChild/ViewChildren
             </div>
             <br>
             <div class="card" style="padding: 50px">
-              <p>-------ViewChild/ViewChildren ------</p>
+              <p>------- ------</p>
               <button (click)="showLast = !showLast">Toggle show last</button>
 
               <app-toggle [(checked)]="isChecked"></app-toggle>
@@ -240,8 +239,42 @@
               </ng-container>
              
             </div>
-          
+          <br>
+          <div class="card" style="padding: 50px">
+            <p>-------ngtemplate ------</p>
+            <div class="card mx-4">
+              <div class="card-header">
+                You have selected
+                <ng-container [ngTemplateOutlet]="couterTmpl"></ng-container>
+              </div>
+              <div class="card-body">
+                There are <span class="badge badge-primary">{{ counter }}</span> items was
+                selected.
+              </div>
+              <div class="card-footer">
+                You have selected
+                <span class="badge badge-primary">{{ counter }}</span> items.
+              </div>
+            </div>
+            
+            <ng-template #couterTmpl>
+              <span class="badge badge-primary">{{ counter }}</span> items.
+            </ng-template>
+            
+            <ng-template #linkTemplate let-link>
+              <h4>{{ link }}</h4>
+            </ng-template>
+            <app-tab-component
+              [navs]="navs"
+              [linkTemplate]="linkTemplate"
+            ></app-tab-component>
+            
+            
+           
           </div>
+
+
+         </div>
         
       </section>
     </main>

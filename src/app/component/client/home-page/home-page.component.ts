@@ -13,6 +13,9 @@ export class HomePageComponent {
   currentProgress = 70;
   isChecked = true;
   showLast = true;
+  
+  counter = 1;
+  navs = ['Link 1', 'Link 2']
 
   show = false;
 
