@@ -13,11 +13,16 @@ export class HomePageComponent {
   currentProgress = 70;
   isChecked = true;
   showLast = true;
-  
+
+  show: boolean = false; 
+
+  toggleContent1() {
+    this.show = !this.show;
+  }
   counter = 1;
   navs = ['Link 1', 'Link 2']
 
-  show = false;
+  show1 = false;
 
   user = {
     name : 'Nam',
@@ -264,7 +269,7 @@ export class HomePageComponent {
   tags =['angular', 'typescript','100days']
 
   isDanger = false;
-  isWarning = true;
-  classes = "box red-boder yellow-background";
+  isWarning = false;
+  classes = 'box red-boder yellow-background';
 
 }

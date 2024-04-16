@@ -9,9 +9,4 @@ import { Product } from './common/product';
 export class AppComponent {
   title = 'demo';
   
-
-  // product : Product ={
-  //   name: 'Hat',
-  //   Price:200
-  // }
 }
