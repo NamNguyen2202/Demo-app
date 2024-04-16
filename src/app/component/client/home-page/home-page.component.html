@@ -72,6 +72,8 @@
               <button (click)="toggleContent1()">Data-binding</button>
 
               <div *ngIf="show">
+                <br>
+                <br>
                 <div>
                   <p>{{ user.name }}</p>
                   <p>{{ user.age }}</p>
@@ -88,6 +90,8 @@
               <button (click)="toggleContent1()">ngIf-Structural</button>
 
               <div *ngIf="show">
+                <br>
+                <br>
                 <div>
                   <hello *ngIf="user.age >= 18" [name]="user.name"></hello>
 
@@ -119,6 +123,8 @@
               <button (click)="toggleContent1()">NgFor</button>
 
               <div *ngIf="show">
+                <br>
+                <br>
                 <ul>
                   <li
                     *ngFor="
@@ -146,6 +152,8 @@
               <button (click)="toggleContent1()">Class Binding</button>
 
               <div *ngIf="show">
+                <br>
+                <br>
                 <button (click)="isDanger = !isDanger">Toggle Danger</button>
                 <button (click)="isWarning = !isWarning">Toggle Warning</button>
 
@@ -162,6 +170,8 @@
               <button (click)="toggleContent1()">Input</button>
 
               <div *ngIf="show">
+                <br>
+                <br>
                 <progress-bar></progress-bar>
                 <br />
                 <button (click)="currentProgress = currentProgress + 1">
@@ -175,10 +185,13 @@
               </div>
             </div>
             <br />
+            
             <div class="card" style="padding: 50px">
               <button (click)="toggleContent1()">Output</button>
 
               <div *ngIf="show">
+                <br>
+                <br>
                 <app-author-list></app-author-list>
               </div>
               <br />
@@ -187,6 +200,8 @@
               <button (click)="toggleContent1()">Two way</button>
 
               <div *ngIf="show">
+                <br>
+                <br>
                 <app-toggle></app-toggle>
               </div>
             </div>
@@ -195,6 +210,8 @@
               <button (click)="toggleContent1()">Toggle Content</button>
 
               <div *ngIf="show">
+                <br>
+                <br>
                 <button (click)="showLast = !showLast">Toggle show last</button>
 
                 <app-toggle [(checked)]="isChecked"></app-toggle>
@@ -211,6 +228,8 @@
               <button (click)="toggleContent1()">ngTemplate</button>
 
               <div *ngIf="show">
+                <br>
+                <br>
                 <div class="card mx-4">
                   <div class="card-header">
                     You have selected

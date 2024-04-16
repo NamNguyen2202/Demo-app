@@ -154,6 +154,23 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+.box{
+  width: 100px;
+  height: 100px;
+  padding: 20px 40px;
+  margin: 10px;
+  border: 2px solid black; 
+}
+
+.red-border{
+  border: 2px solid red;
+}
+
+.yellow-background{
+  background: yellow;
+}
+
+
 /* Card */
 .card {
   margin-bottom: 30px;
